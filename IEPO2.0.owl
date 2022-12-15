@@ -1,0 +1,1849 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.iepo.com/iepo#"
+     xml:base="http://www.iepo.com/iepo"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.iepo.com/iepo">
+        <ns:license>https://creativecommons.org/licenses/by/4.0/legalcode</ns:license>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/legalcode</terms:license>
+        <terms:rights>Copyright IEPO @2022</terms:rights>
+        <rdfs:comment>Intelligence Electronic Prescription Ontology (IEPO) is an ontoloty for enabling interoperabiltiy among various healthcare systems and entities using an electronic prescription.</rdfs:comment>
+        <rdfs:label>Intelligence Electronic Prescription Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+        <terms:license>http://www.opengeospatial.org/ogc/Software</terms:license>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iepo.com/iepo#BelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#BelongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasAllergy"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasDisease"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasDrug"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasPrescription"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasSubPrescription"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#BookedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#BookedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Books"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Books -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Books">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DispensedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#DispensedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Dispenses"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Pharmacist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Dispenses -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Dispenses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacist"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#EmployedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#EmployedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Employs"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacist"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Employs -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Employs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Pharmacist"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasAllergy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasAllergy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasDiseaseInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasDiseaseInteraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Drug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasDoctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasDoctor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#HasPatient"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasDrug -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasDrug">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Drug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasDrugInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasDrugInteraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Drug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasFoodInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasFoodInteraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasIndication -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasIndication">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Treats"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Drug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasPatient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasPrescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasPrescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HasSubPrescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#HasSubPrescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PrescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#PrescribedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Prescribes"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Prescribes -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Prescribes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#RegisteredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#RegisteredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Registers"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Registers -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Registers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#TakenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#TakenBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.iepo.com/iepo#Takes"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Takes -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Takes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Treats -->
+
+    <owl:ObjectProperty rdf:about="http://www.iepo.com/iepo#Treats">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.iepo.com/iepo#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iepo.com/iepo#Absorption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Absorption">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Address">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#ClinicDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PharmacyDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Age">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Allergy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Allergy">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AllergyDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#AllergyDataProperties">
+        <rdfs:comment>AllergyDataProperties</rdfs:comment>
+        <rdfs:label>AllergyDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Alternative -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Alternative">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AppointmentDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#AppointmentDataProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>AppointmentDataProperties</rdfs:comment>
+        <rdfs:label>AppointmentDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AverageMass -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#AverageMass">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#BloodPressure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#BloodPressure">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#BodyMassIndex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#BodyMassIndex">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Brand -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Brand">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#ClinicDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#ClinicDataProperties">
+        <rdfs:comment>ClinicDataProperties</rdfs:comment>
+        <rdfs:label>ClinicDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DDIStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DDIStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DOB -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DOB">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Date">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#AppointmentDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Description">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DiseaseDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DiseaseDataProperties">
+        <rdfs:comment>DiseaseDataProperties</rdfs:comment>
+        <rdfs:label>DiseaseDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DiseaseInteractionStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DiseaseInteractionStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DispensedStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DispensedStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DosageForm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DosageForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DosageRoute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DosageRoute">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DosageStrength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DosageStrength">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DrugBankID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DrugBankID">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DrugDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DrugDataProperties">
+        <rdfs:comment>DrugDataProperties</rdfs:comment>
+        <rdfs:label>DrugDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DrugName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#DrugName">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#FirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#FirstName">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#FoodDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#FoodDataProperties">
+        <rdfs:comment>FoodDataProperties</rdfs:comment>
+        <rdfs:label>FoodDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#FoodInteractionStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#FoodInteractionStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Gender">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HalfLife -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#HalfLife">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Height">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Instruction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Instruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#InstructionDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#InstructionDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#Instruction"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#InstructionFrequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#InstructionFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#Instruction"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#InstructionQuantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#InstructionQuantity">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#Instruction"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#LastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#LastName">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#MechanismOfAction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#MechanismOfAction">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Metabolism -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Metabolism">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#AllergyDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#ClinicDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DiseaseDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#FoodDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PharmacyDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#NextFill -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#NextFill">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PatientDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PatientDataProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>PatientDataProperties</rdfs:comment>
+        <rdfs:label>PatientDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PatientID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PatientID">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A unique identity of each patient</rdfs:comment>
+        <rdfs:label>PatientID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PersonDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PersonDataProperties">
+        <rdfs:comment>PersonDataProperties</rdfs:comment>
+        <rdfs:label>PersonDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PharmacyDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PharmacyDataProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>PharmacyDataProperties</rdfs:comment>
+        <rdfs:label>PharmacyDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Phone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Phone">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#ClinicDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PersonDataProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PharmacyDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PrescriptionDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PrescriptionDataProperties">
+        <rdfs:comment>PrescriptionDataProperties</rdfs:comment>
+        <rdfs:label>PrescriptionDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PrescriptionID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PrescriptionID">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>PrescriptionID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Price">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#ProteinBinding -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#ProteinBinding">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#PulseRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#PulseRate">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Quantity">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#RouteOfElimination -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#RouteOfElimination">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#SideEffect -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#SideEffect">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#SnomedCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#SnomedCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Symptom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Symptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DiseaseDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Temperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Toxicity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Toxicity">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Type">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#AppointmentDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#UnitPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#UnitPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#DrugDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#Weight">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PatientDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iepo.com/iepo#WrongDrugStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iepo.com/iepo#WrongDrugStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.iepo.com/iepo#PrescriptionDataProperties"/>
+        <rdfs:domain rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iepo.com/iepo#Allergy -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Allergy"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Appointment -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Appointment"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Clinic -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Clinic"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Disease -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Disease"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Doctor -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Doctor">
+        <rdfs:subClassOf rdf:resource="http://www.iepo.com/iepo#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Drug -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Drug"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Food -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Food"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Patient -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Patient">
+        <rdfs:subClassOf rdf:resource="http://www.iepo.com/iepo#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Person -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Person"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Pharmacist -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Pharmacist">
+        <rdfs:subClassOf rdf:resource="http://www.iepo.com/iepo#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Pharmacy -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Pharmacy"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Prescription -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Prescription"/>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Receptionist -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#Receptionist">
+        <rdfs:subClassOf rdf:resource="http://www.iepo.com/iepo#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iepo.com/iepo#SubPrescription -->
+
+    <owl:Class rdf:about="http://www.iepo.com/iepo#SubPrescription">
+        <rdfs:subClassOf rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iepo.com/iepo#AP1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AP1">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <BookedBy rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-01T10:00:00</Date>
+        <Type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online</Type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AP2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AP2">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <BookedBy rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-04-01T12:00:00</Date>
+        <Type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phone</Type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AP3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AP3">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <BookedBy rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-06T11:00:00</Date>
+        <Type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inperson</Type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AP4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AP4">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <BookedBy rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-02T09:00:00</Date>
+        <Type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online</Type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AP5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AP5">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Appointment"/>
+        <BookedBy rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-02T10:30:00</Date>
+        <Type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online</Type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbelJohn -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbelJohn">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <Books rdf:resource="http://www.iepo.com/iepo#AP5"/>
+        <HasAllergy rdf:resource="http://www.iepo.com/iepo#Rice"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#Dementia"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#Schizophrenia"/>
+        <HasDoctor rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <HasPrescription rdf:resource="http://www.iepo.com/iepo#AbelJohnPR00000005"/>
+        <Takes rdf:resource="http://www.iepo.com/iepo#Alcohol"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 2246, Area A, Francistown, Botswana</Address>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</Age>
+        <BloodPressure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">90/60mmHg</BloodPressure>
+        <BodyMassIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.20</BodyMassIndex>
+        <DOB rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1980-08-20T00:00:00</DOB>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abel</FirstName>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Gender>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.75</Height>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John</LastName>
+        <PatientID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA00000004</PatientID>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">76000156</Phone>
+        <PulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">110bpm</PulseRate>
+        <Temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35,8°C</Temperature>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbelJohnPR00000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbelJohnPR00000005">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <DispensedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Quetiapine"/>
+        <PrescribedBy rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDDI</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-02T10:30:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DiseaseInteractionExists</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FoodInteractionExists</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Noon, Night</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000005</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.60</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbrahamJames -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbrahamJames">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <Books rdf:resource="http://www.iepo.com/iepo#AP3"/>
+        <HasAllergy rdf:resource="http://www.iepo.com/iepo#Non"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#GastroesophagealReflux"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#Schizophrenia"/>
+        <HasDoctor rdf:resource="http://www.iepo.com/iepo#JimMayer"/>
+        <HasPrescription rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot1700, Phase 6, Gaborone, Botswana</Address>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</Age>
+        <BloodPressure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">90/60mmHg</BloodPressure>
+        <BodyMassIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.68</BodyMassIndex>
+        <DOB rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-07-18T00:00:00</DOB>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abraham</FirstName>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</Height>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James</LastName>
+        <PatientID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA00000002</PatientID>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">72345612</Phone>
+        <PulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">120bpm</PulseRate>
+        <Temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">37,7°C</Temperature>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbrahamJamesPR00000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbrahamJamesPR00000003">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <DispensedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Metoclopramide"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <HasSubPrescription rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP1"/>
+        <HasSubPrescription rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP2"/>
+        <PrescribedBy rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDIExists</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-06T11:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000003</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.40</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbrahamJamesPR00000003SP1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP1">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDIExists</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-06T11:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Morning,Noon, Night</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000003</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.00</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#AbrahamJamesPR00000003SP2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP2">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#SubPrescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Metoclopramide"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDIExists</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-06T11:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Morning</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000003</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.40</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Alcohol -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Alcohol">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <HasFoodInteraction rdf:resource="http://www.iepo.com/iepo#Quetiapine"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alcohol</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Beef -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Beef">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beef</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Cheese">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cheese</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DavidSam -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#DavidSam">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#DavidSamClinic"/>
+        <HasPatient rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <HasPatient rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <HasPatient rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David</FirstName>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sam</LastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DavidSamClinic -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#DavidSamClinic">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <Employs rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <Employs rdf:resource="http://www.iepo.com/iepo#WilsonFrancis"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 23456, Ext7, Palapye, Botswana</Address>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Sam Clinic</Name>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">72216789</Phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Dementia -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Dementia">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <HasDiseaseInteraction rdf:resource="http://www.iepo.com/iepo#Quetiapine"/>
+        <HasIndication rdf:resource="http://www.iepo.com/iepo#Quetiapine"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dementia</Name>
+        <Symptom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experiencing memory loss, poor judgment, and confusion, Difficulty speaking, understanding and expressing thoughts, or reading and writing. Wandering and getting lost in a familiar neighborhood</Symptom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DorcasHope -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#DorcasHope">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <Books rdf:resource="http://www.iepo.com/iepo#AP4"/>
+        <HasAllergy rdf:resource="http://www.iepo.com/iepo#Alcohol"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#HIV-1"/>
+        <HasDoctor rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <HasPrescription rdf:resource="http://www.iepo.com/iepo#DorcasHopePR00000004"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 2246, Ext10, Palapye, Botswana</Address>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</Age>
+        <BloodPressure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">90/60mmHg</BloodPressure>
+        <BodyMassIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.46</BodyMassIndex>
+        <DOB rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1993-08-19T00:00:00</DOB>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dorcas</FirstName>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Gender>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.63</Height>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hope</LastName>
+        <PatientID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA00000003</PatientID>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">75545655</Phone>
+        <PulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80bpm</PulseRate>
+        <Temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35,6°C</Temperature>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#DorcasHopePR00000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#DorcasHopePR00000004">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <DispensedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <PrescribedBy rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDDI</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-02T09:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capsule</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Morning,Noon, Night</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000004</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.40</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WrongDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#GastroesophagealReflux -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#GastroesophagealReflux">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <HasIndication rdf:resource="http://www.iepo.com/iepo#Metoclopramide"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gastroesophageal Reflux</Name>
+        <Symptom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nausea, vomitting</Symptom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#GodwinBatho -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#GodwinBatho">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Pharmacist"/>
+        <Dispenses rdf:resource="http://www.iepo.com/iepo#AbelJohnPR00000005"/>
+        <Dispenses rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <Dispenses rdf:resource="http://www.iepo.com/iepo#DorcasHopePR00000004"/>
+        <Dispenses rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000001"/>
+        <Dispenses rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000002"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#GodwinBathoPharmacy"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Godwin</FirstName>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batho</LastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#GodwinBathoPharmacy -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#GodwinBathoPharmacy">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Pharmacy"/>
+        <Employs rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 23456, Ext7, Palapye, Botswana</Address>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Godwin Batho Pharmacy</Name>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">72216789</Phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#HIV-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#HIV-1">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <HasIndication rdf:resource="http://www.iepo.com/iepo#Ritonavir"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIV-1</Name>
+        <Symptom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hepatotoxicity, Pancreatitis,Allergic Reactions and Hypersensitivity.</Symptom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#JedaJoel -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#JedaJoel">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Patient"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Person"/>
+        <Books rdf:resource="http://www.iepo.com/iepo#AP1"/>
+        <Books rdf:resource="http://www.iepo.com/iepo#AP2"/>
+        <HasAllergy rdf:resource="http://www.iepo.com/iepo#Beef"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#GastroesophagealReflux"/>
+        <HasDisease rdf:resource="http://www.iepo.com/iepo#Schizophrenia"/>
+        <HasDoctor rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#GastroesophagealReflux"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Schizophrenia"/>
+        <HasPrescription rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000001"/>
+        <HasPrescription rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000002"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 1600, Ext3, Palapye, Botswana</Address>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</Age>
+        <BloodPressure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">90/60mmHg</BloodPressure>
+        <BodyMassIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17</BodyMassIndex>
+        <DOB rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-06-17T00:00:00</DOB>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jeda</FirstName>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.83</Height>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joel</LastName>
+        <PatientID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA00000001</PatientID>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">71234565</Phone>
+        <PulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100bpm</PulseRate>
+        <Temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">36,5°C</Temperature>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#JedaJoelPR00000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#JedaJoelPR00000001">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <DispensedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <PrescribedBy rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDIExists</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-01T10:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablete</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Morning,Noon, Night</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000001</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.00</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#JedaJoelPR00000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#JedaJoelPR00000002">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Prescription"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <DispensedBy rdf:resource="http://www.iepo.com/iepo#GodwinBatho"/>
+        <HasDrug rdf:resource="http://www.iepo.com/iepo#Metoclopramide"/>
+        <PrescribedBy rdf:resource="http://www.iepo.com/iepo#DavidSam"/>
+        <DDIStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDIExists</DDIStatus>
+        <Date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-04-01T12:00:00</Date>
+        <DiseaseInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoDiseaseInteraction</DiseaseInteractionStatus>
+        <DispensedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDispensed</DispensedStatus>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capsule</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10mg</DosageStrength>
+        <FoodInteractionStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoFoodInteraction</FoodInteractionStatus>
+        <InstructionDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 tablet, Morning, Night</InstructionDescription>
+        <InstructionFrequency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</InstructionFrequency>
+        <InstructionQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</InstructionQuantity>
+        <NextFill rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</NextFill>
+        <PrescriptionID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PR00000002</PrescriptionID>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.80</Price>
+        <Quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Quantity>
+        <WrongDrugStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CorrectDrugPrescribed</WrongDrugStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#JimMayer -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#JimMayer">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Doctor"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#JimMayerClinic"/>
+        <HasPatient rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jim</FirstName>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mayer</LastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#JimMayerClinic -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#JimMayerClinic">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Clinic"/>
+        <Employs rdf:resource="http://www.iepo.com/iepo#JimMayer"/>
+        <Employs rdf:resource="http://www.iepo.com/iepo#MendisAlahambra"/>
+        <Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plot 001123, Ext1, Palapye, Botswana</Address>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jim Mayer Clinic</Name>
+        <Phone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">71525000</Phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#MendisAlahambra -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#MendisAlahambra">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#JimMayerClinic"/>
+        <Registers rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mendis</FirstName>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alahambra</LastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Metoclopramide -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Metoclopramide">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP2"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000002"/>
+        <HasDrugInteraction rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <Treats rdf:resource="http://www.iepo.com/iepo#GastroesophagealReflux"/>
+        <Absorption rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metoclopramide is rapidly absorbed in the gastrointestinal tract with an absorption rate of about 84%. The bioavailability of the oral preparation is reported to be about 40.7%, but can range from 30-100%</Absorption>
+        <Alternative rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sumatriptan</Alternative>
+        <AverageMass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">299.796</AverageMass>
+        <Brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gimoti, Reglan</Brand>
+        <Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diabetic gastroparesis is a condition that causes frequent nausea and vomiting, which has a negative impact on quality of life and poses a significant burden on the healthcare system. </Description>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral tablet, Oral Syrup</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10mg</DosageStrength>
+        <DrugBankID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DB01233</DrugBankID>
+        <DrugName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metoclopramide</DrugName>
+        <HalfLife rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The mean elimination half-life of metoclopramide in people with healthy renal function ranges from 5 to 6 hours but is prolonged in patients with renal impairment. Downward dose adjustment should be considered</HalfLife>
+        <MechanismOfAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metoclopramide causes antiemetic effects by inhibiting dopamine D2 and serotonin 5-HT3 receptors in the chemoreceptor trigger zone (CTZ) located in the area postrema of the brain.</MechanismOfAction>
+        <Metabolism rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> This drug is metabolized by cytochrome P450 enzymes in the liver. </Metabolism>
+        <ProteinBinding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metoclopramide is 30% bound to plasma proteins, mainly to alpha-1-acid glycoprotein.</ProteinBinding>
+        <RouteOfElimination rdf:datatype="http://www.w3.org/2001/XMLSchema#string">About 85% of an orally administered dose was measured in the urine within 72 hours during a pharmacokinetic study. An average of 18% to 22% of 10-20 mg dose was recovered as free drug within 3 days of administration</RouteOfElimination>
+        <SideEffect rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drowsiness, disorientation, and extrapyramidal reactions.</SideEffect>
+        <SnomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">56549003</SnomedCode>
+        <Toxicity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The rat oral LD50 of metoclopramide is 750 mg/kg. Some symptoms of an overdose with metoclopramide include drowsiness, disorientation, and extrapyramidal reactions.</Toxicity>
+        <UnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.48</UnitPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Milk -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Milk">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Milk</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Non -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Non">
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Quetiapine -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Quetiapine">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbelJohnPR00000005"/>
+        <HasDiseaseInteraction rdf:resource="http://www.iepo.com/iepo#Dementia"/>
+        <HasFoodInteraction rdf:resource="http://www.iepo.com/iepo#Alcohol"/>
+        <Treats rdf:resource="http://www.iepo.com/iepo#Dementia"/>
+        <Absorption rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quetiapine is rapidly and well absorbed after administration of an oral dose. Steady-state is achieved within 48 hours15 Peak plasma concentrations are achieved within 1.5 hours. </Absorption>
+        <Alternative rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risperidone</Alternative>
+        <AverageMass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">299.796</AverageMass>
+        <Brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seroquel</Brand>
+        <Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initially approved by the FDA in 1997, quetiapine is a second-generation atypical antipsychotic used in schizophrenia, major depression, and bipolar disorder.</Description>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral/Injection</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50mg</DosageStrength>
+        <DrugBankID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DB01224</DrugBankID>
+        <DrugName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quetiapine</DrugName>
+        <HalfLife rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The average terminal half-life of quetiapine is about 6-7 hours</HalfLife>
+        <MechanismOfAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Although the mechanism of action of quetiapine is not fully understood, several proposed mechanisms exist. In schizophrenia, its actions could occur from the antagonism of dopamine type 2 (D2) and serotonin  (5HT2A) receptors.</MechanismOfAction>
+        <Metabolism rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The metabolism of quetiapine occurs mainly in the liver.</Metabolism>
+        <ProteinBinding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The protein binding of quetiapine is 83%</ProteinBinding>
+        <RouteOfElimination rdf:datatype="http://www.w3.org/2001/XMLSchema#string">After an oral dose of radiolabeled quetiapine, less than 1% of unchanged drug was detected in the urine8, suggesting that quetiapine is heavily metabolized. About 73% of a dose was detected in the urine, and about 20% in the feces</RouteOfElimination>
+        <SideEffect rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sedation, drowsiness, tachycardia, and hypotension.</SideEffect>
+        <SnomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">386850001</SnomedCode>
+        <Toxicity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The oral LD50 if quetiapine in rats is 2000 mg/kg</Toxicity>
+        <UnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.26</UnitPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Rice -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Rice">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Allergy"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rice</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Risperidone -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Risperidone">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJamesPR00000003SP1"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#DorcasHopePR00000004"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoelPR00000001"/>
+        <HasDrugInteraction rdf:resource="http://www.iepo.com/iepo#Metoclopramide"/>
+        <Treats rdf:resource="http://www.iepo.com/iepo#Schizophrenia"/>
+        <Absorption rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Well absorbed. The absolute oral bioavailability of risperidone is 70% (CV=25%). The relative oral bioavailability of risperidone from a tablet is 94% (CV=10%) when compa red to a solution.</Absorption>
+        <Alternative rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quetiapine</Alternative>
+        <AverageMass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">410.4845</AverageMass>
+        <Brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perseris, Risperdal</Brand>
+        <Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risperidone is a second-generation antipsychotic (SGA) medication used in the treatment of a number of mood and mental health conditions including schizophrenia and bipolar disorder.</Description>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5mg</DosageStrength>
+        <DrugBankID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DB00734</DrugBankID>
+        <DrugName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risperidone</DrugName>
+        <HalfLife rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 hours in extensive metabolizers Up to 20 hours in poor metabolizers.</HalfLife>
+        <MechanismOfAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Schizophrenia is thought to result from an excess of dopaminergic D2 and serotonergic 5-HT2A activity, resulting in overactivity of central mesolimbic pathways and mesocortical pathways, respectively.</MechanismOfAction>
+        <Metabolism rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extensively metabolized by hepatic cytochrome P450 2D6 isozyme to 9-hydroxyrisperidone (i.e. paliperidone), which has approximately the same receptor binding affinity as risperidone.</Metabolism>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</Price>
+        <ProteinBinding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risperidone and its active metabolite, 9-hydroxyrisperidone, are ~88% and ~77% protein-bound in human plasma, respectively.</ProteinBinding>
+        <RouteOfElimination rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risperidone is extensively metabolized in the liver.</RouteOfElimination>
+        <SideEffect rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anxiety, feeling sleepy or tired.
+unusual body movements.
+problems standing and walking.
+feeling dizzy.</SideEffect>
+        <SnomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">416098002</SnomedCode>
+        <Toxicity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Symptoms of overdose include lethargy, dystoniaspasm, tachycardia, bradycardia, and seizures. LD50=57.7 mg/kg (rat, oral) and 34 mg/kg (rat, intravenous)</Toxicity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Ritonavir -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Ritonavir">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Drug"/>
+        <Treats rdf:resource="http://www.iepo.com/iepo#HIV-1"/>
+        <Absorption rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The absolute bioavailability of ritonavir has not been determined. Following oral administration, peak concentrations are reached after approximately 2 hours and 4 hours (Tmax) after dosing under fasting and non-fasting conditions, respectively.</Absorption>
+        <AverageMass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">383.507</AverageMass>
+        <Brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+Kaletra, Norvir, Viekira Pak</Brand>
+        <Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavir is an HIV protease inhibitor that interferes with the reproductive cycle of HIV. Although it was initially developed as an independent antiviral agent, it has been shown to possess advantageous properties in combination regimens with low-dose ritonavir and other protease inhibitors. </Description>
+        <DosageForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tablet</DosageForm>
+        <DosageRoute rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oral</DosageRoute>
+        <DosageStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100mg</DosageStrength>
+        <DrugBankID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DB00503</DrugBankID>
+        <DrugName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavi</DrugName>
+        <HalfLife rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The approximate half-life of ritonavir is 3-5 hours</HalfLife>
+        <MechanismOfAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavic inhibits the HIV viral proteinase enzyme that normally cleaves the structural and replicative proteins that arise from major HIV genes, such as gag and pol. Gag encodes proteins involved in the core and the nucleocapsid, while pol encodes the the HIV reverse transcriptase, ribonuclease H, integrase, and protease.</MechanismOfAction>
+        <Metabolism rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavir circulates in the plasma predominantly as unchanged drug. 
+
+</Metabolism>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.46</Price>
+        <ProteinBinding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavir is highly protein-bound in plasma (~98-99%), primarily to albumin and alpha-1 acid glycoprotein over the standard concentration range.</ProteinBinding>
+        <RouteOfElimination rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ritonavir is primarily eliminated in the feces. Following oral administration of a single 600mg dose of radiolabeled ritonavir, approximately 11.3 ± 2.8% of the dose was excreted into the urine, of which 3.5 ± 1.8% was unchanged parent drug.</RouteOfElimination>
+        <SideEffect rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heat, Flushing, rediness of the skin, sweating</SideEffect>
+        <SnomedCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">108693005</SnomedCode>
+        <Toxicity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human experience of acute overdose with ritonavir is limited.</Toxicity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Schizophrenia -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Schizophrenia">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Disease"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#AbrahamJames"/>
+        <BelongsTo rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <HasIndication rdf:resource="http://www.iepo.com/iepo#Risperidone"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schizophrenia</Name>
+        <Symptom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depression, Mental Health Disoder</Symptom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#WilsonFrancis -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#WilsonFrancis">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Receptionist"/>
+        <EmployedBy rdf:resource="http://www.iepo.com/iepo#DavidSamClinic"/>
+        <Registers rdf:resource="http://www.iepo.com/iepo#AbelJohn"/>
+        <Registers rdf:resource="http://www.iepo.com/iepo#DorcasHope"/>
+        <Registers rdf:resource="http://www.iepo.com/iepo#JedaJoel"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wilson</FirstName>
+        <LastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francis</LastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iepo.com/iepo#Yogurt -->
+
+    <owl:NamedIndividual rdf:about="http://www.iepo.com/iepo#Yogurt">
+        <rdf:type rdf:resource="http://www.iepo.com/iepo#Food"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yogurt</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#Address"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#Age"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#DOB"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#FirstName"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#Gender"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#LastName"/>
+            <rdf:Description rdf:about="http://www.iepo.com/iepo#Phone"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
